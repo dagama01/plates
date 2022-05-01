@@ -26,6 +26,7 @@ public class Cat {
         else if (appetite > plate.getFood()) System.out.println("Cat hungry!");
         plate.decreaseFood(appetite);
         System.out.println("Cat full");
+        System.out.println(isSatiety());
     }
 
 }
