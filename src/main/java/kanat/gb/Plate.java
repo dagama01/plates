@@ -11,16 +11,13 @@ public class Plate {
     }
 
 
-    public void decreaseFood(int eaten, String satiety){
+    public void decreaseFood(int eaten){
         if(this.food>eaten){
             this.food -= eaten;
-            satiety = "Cat is full";
-            System.out.println("Satiety: " + satiety);
         }else{
             addFood();
             this.food -= eaten;
-            satiety = "Cat is full";
-            System.out.println("Satiety: " + satiety);
+
         }
     }
     public void addFood(){

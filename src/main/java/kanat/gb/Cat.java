@@ -3,9 +3,9 @@ package kanat.gb;
 public class Cat {
     private String name;
     private int appetite;
-    private String satiety;
+    private boolean satiety;
 
-    public String getSatiety() {
+    public boolean isSatiety() {
         return satiety;
     }
 
@@ -22,7 +22,10 @@ public class Cat {
         this.appetite = appetite;
     }
     public void eat(Plate plate){
-        plate.decreaseFood(appetite,satiety);
+        if(appetite <= plate.getFood()) satiety = true;
+        else if (appetite > plate.getFood()) System.out.println("Cat hungry!");
+        plate.decreaseFood(appetite);
+        System.out.println("Cat full");
     }
 
 }
