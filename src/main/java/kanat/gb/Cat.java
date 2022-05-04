@@ -22,11 +22,15 @@ public class Cat {
         this.appetite = appetite;
     }
     public void eat(Plate plate){
+        if (plate.getFood() < appetite){
+            System.out.println("Not enough food");
+            plate.addFood(appetite);
+        }
         if(appetite <= plate.getFood()) satiety = true;
-        else if (appetite > plate.getFood()) System.out.println("Cat hungry!");
+        else if (appetite > plate.getFood()) System.out.println("Cat " + this.name + " hungry!");
         plate.decreaseFood(appetite);
-        System.out.println("Cat full");
-        System.out.println(isSatiety());
+        System.out.println("Cat " + this.name +" full");
+        System.out.println("");
     }
 
 }

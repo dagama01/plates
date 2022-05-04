@@ -12,16 +12,15 @@ public class Plate {
 
 
     public void decreaseFood(int eaten){
-        if(this.food>eaten){
-            this.food -= eaten;
-        }else{
-            addFood();
             this.food -= eaten;
 
         }
-    }
-    public void addFood(){
-        this.food += 400;
+
+    public void addFood(int eaten){
+        if(eaten < 0){
+            this.food += eaten *(-1);
+        }
+        this.food += eaten;
     }
 
     @Override
